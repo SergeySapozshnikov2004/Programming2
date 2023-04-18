@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Piquet.h"
 
 Piquet::Piquet(int lenght, double shift): lenght(lenght), shift(shift)
@@ -15,10 +16,9 @@ std::string ToString(const Piquet &piquet)
 
 std::istream& operator>>(std::istream &istream, Piquet &piquet)
 {
-    istream >> piquet.lenght;
-    istream >> piquet.shift;
-    return istream;
+    return istream >> piquet.lenght >> piquet.shift;
 }
+
 std::ostream& operator<<(std::ostream &ostream, Piquet &piquet)
 {
     return ostream << ToString(piquet);
