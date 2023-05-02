@@ -1,9 +1,9 @@
 #include <string>
 
-
 class Piquet
 {
 private:
+    int number;
     int lenght;
     double shift;
 public:
@@ -12,7 +12,7 @@ public:
      * @brief Считает пикет и смещение 
      * 
      */
-    Piquet(int lenght, double shift);
+    Piquet(const int number,const double shift);
 
     /**
      * @brief Проверяет равна ли длинна 100 метрам

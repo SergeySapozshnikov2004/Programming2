@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Piquet.h"
 
-Piquet::Piquet(int lenght, double shift): lenght(lenght), shift(shift)
+Piquet::Piquet(int number, double shift): number(number), shift(shift)
 {}
 
 bool Piquet::IsStandart()const
@@ -11,7 +11,7 @@ bool Piquet::IsStandart()const
 
 std::string ToString(const Piquet &piquet)
 {
-    return (piquet.lenght < 0 ? "(ПК 0": "(ПК ") + std::to_string(piquet.lenght) + "+" + std::to_string(piquet.shift) + ")";   
+    return (piquet.number < 0 ? "(ПК 0": "(ПК ") + std::to_string(piquet.number) + "+" + std::to_string(piquet.shift) + ")";   
 }
 
 std::istream& operator>>(std::istream &istream, Piquet &piquet)
