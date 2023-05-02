@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Piquet.h"
 
-Piquet::Piquet(int number, double shift): number(number), shift(shift)
+Piquet::Piquet(int number, double shift, double lenght): number(number), shift(shift), lenght(lenght)
 {}
 
 bool Piquet::IsStandart()const

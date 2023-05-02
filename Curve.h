@@ -4,13 +4,13 @@ class Curve
 {
 private:
     double radius;
-    int start;
-    int end;
+    double start;
+    double end;
 public:
 
     /**
      * @brief Получает данные 
-     * 
+    //  * 
      */
     Curve(const double radius, const int start,const int end);
 };

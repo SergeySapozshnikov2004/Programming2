@@ -4,19 +4,18 @@ class Piquet
 {
 private:
     int number;
-    int lenght;
+    double lenght;
     double shift;
 public:
     
     /**
-     * @brief Считает пикет и смещение 
+     * @brief Считает длинну пикета, его номер и смещение 
      * 
      */
-    Piquet(const int number,const double shift);
+    Piquet(const int number,const double shift,const double lenght);
 
     /**
      * @brief Проверяет равна ли длинна 100 метрам
-     * 
      * @param lenght длинна пикета
      * @return true когда lenght = 100 метров
      * @return false когда lenght != 100 метров
@@ -29,6 +28,8 @@ public:
      * @return std::string пикет и смещение в виде строки
      */
     friend std::string ToString(const Piquet& piquet);
+    friend std::string ToString(const Piquet* piquet);
+    friend std::string ToString(Piquet* piquet);
 
     friend std::istream& operator>>(std::istream& istream, Piquet& piquet);
     friend std::ostream& operator<<(std::ostream& ostream, Piquet& piquet);
