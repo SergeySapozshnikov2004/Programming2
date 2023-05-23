@@ -32,7 +32,7 @@ public:
     friend std::string ToString(Piquet* piquet);
 
     friend std::istream& operator>>(std::istream& istream, Piquet& piquet);
-    friend std::ostream& operator<<(std::ostream& ostream, Piquet& piquet);
+    friend std::ostream& operator<<(std::ostream& ostream, const Piquet& piquet);
     friend bool operator==(const Piquet& lha, const Piquet& rha);
     friend bool operator!=(const Piquet& lha, const Piquet& rha);
 };

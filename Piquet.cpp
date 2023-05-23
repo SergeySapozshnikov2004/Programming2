@@ -19,7 +19,7 @@ std::istream& operator>>(std::istream &istream, Piquet &piquet)
     return istream >> piquet.lenght >> piquet.shift;
 }
 
-std::ostream& operator<<(std::ostream &ostream, Piquet &piquet)
+std::ostream& operator<<(std::ostream &ostream, const Piquet &piquet)
 {
     return ostream << ToString(piquet);
 }
