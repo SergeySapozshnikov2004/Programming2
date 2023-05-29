@@ -4,8 +4,8 @@ class Curve
 {
 private:
     double radius;
-    double start;
-    double end;
+    int start;
+    int end;
 public:
 
     /**
