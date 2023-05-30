@@ -1,12 +1,19 @@
 #include <iostream>
 #include "Piquet.h"
+#include <cmath>
+#include <limits>
+
+bool is_equal(double x, double y) {
+    return std::fabs(x - y) < std::numeric_limits<double>::epsilon();
+
+}
 
 Piquet::Piquet(int number, double shift, double lenght): number(number), shift(shift), lenght(lenght)
 {}
 
 bool Piquet::IsStandart()const
 {
-    return lenght == 100;
+    return is_equal(lenght, 100);
 }
 
 std::string ToString(const Piquet &piquet)
@@ -26,7 +33,7 @@ std::ostream& operator<<(std::ostream &ostream, const Piquet &piquet)
 
 bool operator==(const Piquet &lha, const Piquet &rha)
 {
-    return lha.lenght == lha.lenght && rha.shift == rha.shift;
+    return is_equal(lha.lenght, rha.lenght) && is_equal(lha.shift, rha.shift);
 }
 
 bool operator!=(const Piquet &lha, const Piquet &rha)

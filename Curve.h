@@ -1,18 +1,19 @@
 #include <string>
+#include <Piquet.h>
 
 class Curve
 {
 private:
     double radius;
-    int start;
-    int end;
+    Piquet start;
+    Piquet end;
 public:
 
     /**
      * @brief Получает данные 
     //  * 
      */
-    Curve(const double radius, const int start,const int end);
+    Curve(const double radius, const Piquet start,const Piquet end);
 
         /**
      * @brief Переводит пикет и смещение в строку

@@ -1,5 +1,14 @@
 #include <string>
 
+   /**
+     * @brief сравнивает два double
+     * @param x первый double
+     * @param y второй double
+     * @return true когда равенство
+     * @return false когда неравенство
+     */
+bool is_equal(double x, double y);
+
 class Piquet
 {
 private:
@@ -12,7 +21,7 @@ public:
      * @brief Считает длинну пикета, его номер и смещение 
      * 
      */
-    Piquet(const int number,const double shift,const double lenght);
+    Piquet(const int number, const double shift, const double lenght = 100);
 
     /**
      * @brief Проверяет равна ли длинна 100 метрам
@@ -20,7 +29,7 @@ public:
      * @return true когда lenght = 100 метров
      * @return false когда lenght != 100 метров
      */
-    bool IsStandart()const;
+    bool IsStandart() const;
     
     /**
      * @brief Переводит пикет и смещение в строку
