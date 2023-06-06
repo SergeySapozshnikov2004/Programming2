@@ -1,13 +1,14 @@
+#pragma once
 #include <string>
 
-   /**
-     * @brief сравнивает два double
-     * @param x первый double
-     * @param y второй double
-     * @return true когда равенство
-     * @return false когда неравенство
-     */
-bool is_equal(double x, double y);
+/**
+ * @brief сравнивает два double
+ * @param x первый double
+ * @param y второй double
+ * @return true когда равенство
+ * @return false когда неравенство
+ */
+bool is_equal(const double lha, const double rha);
 
 class Piquet
 {

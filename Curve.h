@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <Piquet.h>
 
@@ -11,9 +12,9 @@ public:
 
     /**
      * @brief Получает данные 
-    //  * 
+     * 
      */
-    Curve(const double radius, const Piquet start,const Piquet end);
+    Curve(const double radius, const Piquet& start, const Piquet& end);
 
         /**
      * @brief Переводит пикет и смещение в строку

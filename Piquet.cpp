@@ -4,7 +4,7 @@
 #include <limits>
 
 bool is_equal(double x, double y) {
-    return std::fabs(x - y) < std::numeric_limits<double>::epsilon();
+    return std::abs(x - y) < std::numeric_limits<double>::epsilon();
 
 }
 
@@ -16,10 +16,7 @@ bool Piquet::IsStandart()const
     return is_equal(lenght, 100);
 }
 
-std::string ToString(const Piquet &piquet)
-{
-    return (piquet.number < 0 ? "(ПК 0": "(ПК ") + std::to_string(piquet.number) + "+" + std::to_string(piquet.shift) + ")";   
-}
+
 
 std::istream& operator>>(std::istream &istream, Piquet &piquet)
 {
@@ -33,7 +30,7 @@ std::ostream& operator<<(std::ostream &ostream, const Piquet &piquet)
 
 bool operator==(const Piquet &lha, const Piquet &rha)
 {
-    return is_equal(lha.lenght, rha.lenght) && is_equal(lha.shift, rha.shift);
+    return is_equal(lha.number, rha.number) && is_equal(lha.shift, rha.shift);
 }
 
 bool operator!=(const Piquet &lha, const Piquet &rha)
