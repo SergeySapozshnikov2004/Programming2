@@ -1,7 +1,13 @@
 #include <Piquet.h>
 #include <iostream>
+#include "Limitation.h"
 
-std::string ToString(const Piquet &piquet)
-{
-    return (piquet.number < 0 ? "(ПК 0": "(ПК ") + std::to_string(piquet.number) + "+" + std::to_string(piquet.shift) + ")";   
-}
+Limitation::Limitation(double dimension, Piquet start, Piquet end)
+    : dimension(dimension), start(start), end(end)
+{}
+
+Limitation::~Limitation()
+{}
+
+std::string Limitation::ToString()
+{}

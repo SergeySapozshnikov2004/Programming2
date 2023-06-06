@@ -1,16 +1,16 @@
+#include <iostream>
 #include <Piquet.h>
 #include <string>
 
-
 class Limitation
 {
-private:
-
-    Piquet number;
-    Piquet shift;
-
+protected:
+    double dimension;
+    Piquet start;
+    Piquet end;
 public:
+    Limitation(double dimension, Piquet start, Piquet end);
 
-    std::string ToString(const Piquet& number, const Piquet& shift);
-
+    virtual ~Limitation();
+    virtual std::string ToString();
 };

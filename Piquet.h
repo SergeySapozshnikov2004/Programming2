@@ -1,15 +1,6 @@
 #pragma once
 #include <string>
 
-/**
- * @brief сравнивает два double
- * @param x первый double
- * @param y второй double
- * @return true когда равенство
- * @return false когда неравенство
- */
-bool is_equal(const double lha, const double rha);
-
 class Piquet
 {
 private:
@@ -37,9 +28,7 @@ public:
      * 
      * @return std::string пикет и смещение в виде строки
      */
-    friend std::string ToString(const Piquet& piquet);
-    friend std::string ToString(const Piquet* piquet);
-    friend std::string ToString(Piquet* piquet);
+    std::string ToString() const;
 
     friend std::istream& operator>>(std::istream& istream, Piquet& piquet);
     friend std::ostream& operator<<(std::ostream& ostream, const Piquet& piquet);

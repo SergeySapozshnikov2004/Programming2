@@ -1,20 +1,44 @@
-
+#include <sstream>
 #include <iostream>
 #include "Curve.h"
 #include "Piquet.h"
+#include "math.h"
 
-std::string ToString(const Curve &curve)
+Curve::Curve(const double radius, const Piquet& start, const Piquet& end) : Limitation(radius, start, end)
+{}
+
+double Curve::getRadius() const
 {
-    
-    return (curve.radius < 0 ? "(ПК 0": "(ПК ") + ToString(curve.start) + "+" + ToString(curve.end) + ")";   
+    return this->dimension;
 }
 
-std::ostream& operator<<(std::ostream &ostream, Curve &curve)
+Piquet Curve::getStart() const
 {
-    return ostream << ToString(curve);
+    return this->start;
 }
 
-Curve::Curve(const double radius, const Piquet& start, const Piquet& end)
-: radius(radius), start(start), end(end)
+Piquet Curve::getEnd() const
 {
+    return this->end;
+}
+
+std::string Curve::ToString()
+{
+    std::stringstream buffer;
+
+    buffer << *this;
+    return buffer.str();
+}
+
+std::ostream& operator<<(std::ostream& ostream, const Curve& curve)
+{
+    return ostream << "(Curve, radius=" << curve.getRadius()
+        << ", start=" << curve.getStart()
+        << ", end=" << curve.getEnd()
+        << ")";
+}
+
+std::istream& operator>>(std::istream& istream, Curve& curve)
+{
+    istream >> curve.dimension >> curve.start >> curve.end;
 }

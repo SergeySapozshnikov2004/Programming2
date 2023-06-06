@@ -1,22 +1,17 @@
+#include <sstream>
 #include <iostream>
-#include "Piquet.h"
 #include <cmath>
 #include <limits>
+#include "Piquet.h"
+#include "math.h"
 
-bool is_equal(double x, double y) {
-    return std::abs(x - y) < std::numeric_limits<double>::epsilon();
-
-}
-
-Piquet::Piquet(int number, double shift, double lenght): number(number), shift(shift), lenght(lenght)
+Piquet::Piquet(int number, double shift, double lenght) : number(number), shift(shift), lenght(lenght)
 {}
 
-bool Piquet::IsStandart()const
+bool Piquet::IsStandart() const
 {
-    return is_equal(lenght, 100);
+    return is_eq(lenght, 100);
 }
-
-
 
 std::istream& operator>>(std::istream &istream, Piquet &piquet)
 {
@@ -25,15 +20,27 @@ std::istream& operator>>(std::istream &istream, Piquet &piquet)
 
 std::ostream& operator<<(std::ostream &ostream, const Piquet &piquet)
 {
-    return ostream << ToString(piquet);
+    return ostream << piquet.ToString();
 }
 
 bool operator==(const Piquet &lha, const Piquet &rha)
 {
-    return is_equal(lha.number, rha.number) && is_equal(lha.shift, rha.shift);
+    return lha.number == rha.number && is_eq(lha.shift, rha.shift);
 }
 
 bool operator!=(const Piquet &lha, const Piquet &rha)
 {
     return not operator==(lha, rha);
+}
+
+std::string Piquet::ToString() const
+{
+    std::stringstream buffer;
+
+    buffer << "(ПК ";
+    if (is_eq(this->lenght, 0))
+        buffer << "0";
+    buffer << this->number << this->shift << ")";
+
+    return buffer.str(); 
 }
