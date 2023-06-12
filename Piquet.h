@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class Piquet
+class Piquet final
 {
 private:
     int number;

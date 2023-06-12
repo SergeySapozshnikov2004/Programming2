@@ -2,8 +2,8 @@
 #include <iostream>
 #include "Limitation.h"
 
-Limitation::Limitation(double dimension, Piquet start, Piquet end)
-    : dimension(dimension), start(start), end(end)
+Limitation::Limitation(double value, const Piquet& start, const Piquet& end)
+    : value(value), start(start), end(end)
 {}
 
 Limitation::~Limitation()

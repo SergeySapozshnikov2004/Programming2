@@ -3,7 +3,7 @@
 #include <Piquet.h>
 #include "Limitation.h"
 
-class Curve : public Limitation
+class Curve final : public Limitation
 {
 public:
     /**

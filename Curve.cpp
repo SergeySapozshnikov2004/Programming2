@@ -9,7 +9,7 @@ Curve::Curve(const double radius, const Piquet& start, const Piquet& end) : Limi
 
 double Curve::getRadius() const
 {
-    return this->dimension;
+    return this->value;
 }
 
 Piquet Curve::getStart() const
@@ -40,5 +40,5 @@ std::ostream& operator<<(std::ostream& ostream, const Curve& curve)
 
 std::istream& operator>>(std::istream& istream, Curve& curve)
 {
-    istream >> curve.dimension >> curve.start >> curve.end;
+    istream >> curve.value >> curve.start >> curve.end;
 }

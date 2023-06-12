@@ -1,1 +1,4 @@
-bool is_eq(double lha, double rha);
+namespace miit::math
+{
+    bool is_eq(double lha, double rha);
+}

@@ -5,12 +5,12 @@
 class Limitation
 {
 protected:
-    double dimension;
+    double value;
     Piquet start;
     Piquet end;
 public:
-    Limitation(double dimension, Piquet start, Piquet end);
+    Limitation(double value,const Piquet& start,const Piquet& end);
 
-    virtual ~Limitation();
+    virtual ~Limitation() = 0;
     virtual std::string ToString();
 };
