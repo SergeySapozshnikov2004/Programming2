@@ -10,7 +10,7 @@ Piquet::Piquet(int number, double shift, double lenght) : number(number), shift(
 
 bool Piquet::IsStandart() const
 {
-    return is_eq(lenght, 100);
+    return miit::math::is_eq(lenght, 100);
 }
 
 std::istream& operator>>(std::istream &istream, Piquet &piquet)
@@ -25,7 +25,7 @@ std::ostream& operator<<(std::ostream &ostream, const Piquet &piquet)
 
 bool operator==(const Piquet &lha, const Piquet &rha)
 {
-    return lha.number == rha.number && is_eq(lha.shift, rha.shift);
+    return lha.number == rha.number && miit::math::is_eq(lha.shift, rha.shift);
 }
 
 bool operator!=(const Piquet &lha, const Piquet &rha)
@@ -38,7 +38,7 @@ std::string Piquet::ToString() const
     std::stringstream buffer;
 
     buffer << "(ПК ";
-    if (is_eq(this->lenght, 0))
+    if (miit::math::is_eq(this->lenght, 0))
         buffer << "0";
     buffer << this->number << this->shift << ")";
 
