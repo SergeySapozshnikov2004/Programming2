@@ -24,21 +24,6 @@ Piquet Curve::getEnd() const
 
 std::string Curve::ToString()
 {
-    std::stringstream buffer;
-
-    buffer << *this;
-    return buffer.str();
+    return std::string();
 }
 
-std::ostream& operator<<(std::ostream& ostream, const Curve& curve)
-{
-    return ostream << "(Curve, radius=" << curve.getRadius()
-        << ", start=" << curve.getStart()
-        << ", end=" << curve.getEnd()
-        << ")";
-}
-
-std::istream& operator>>(std::istream& istream, Curve& curve)
-{
-    istream >> curve.value >> curve.start >> curve.end;
-}

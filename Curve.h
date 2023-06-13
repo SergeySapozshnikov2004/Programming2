@@ -16,7 +16,5 @@ public:
     Piquet getStart() const;
     Piquet getEnd() const;
 
-    std::string ToString() override;
-    friend std::ostream& operator<<(std::ostream& ostream, const Curve& curve);
-    friend std::istream& operator>>(std::istream& ostream, Curve& curve);
+    std::string ToString();
 };

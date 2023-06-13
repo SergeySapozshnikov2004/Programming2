@@ -13,4 +13,10 @@ public:
 
     virtual ~Limitation() = 0;
     virtual std::string ToString();
+
+
+    virtual std::string ToString();
+    friend std::ostream& operator<<(std::ostream& ostream, const Limitation& limitation);
+    friend std::istream& operator>>(std::istream& ostream, Limitation& limitation);
+
 };
