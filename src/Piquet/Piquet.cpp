@@ -5,7 +5,11 @@
 #include "Piquet.h"
 #include "math.h"
 
-Piquet::Piquet(int number, double shift, double lenght) : number(number), shift(shift), lenght(lenght)
+Piquet::Piquet():number(0), lenght(0), shift(0)
+{
+}
+
+Piquet::Piquet(int number, double shift, double lenght) : number(number), lenght(lenght), shift(shift)
 {}
 
 bool Piquet::IsStandart() const

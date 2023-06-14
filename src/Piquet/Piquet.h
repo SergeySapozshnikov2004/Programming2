@@ -9,6 +9,8 @@ private:
     double shift;
 public:
     
+    Piquet();
+
     /**
      * @brief Считает длинну пикета, его номер и смещение 
      * 
