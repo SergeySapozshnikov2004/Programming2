@@ -39,7 +39,7 @@ void Curve::setEnd(const Piquet& end)
 
 std::ostream& operator<<(std::ostream& ostream, const Curve& curve)
 {
-    return ostream << "(Limitation, value=" << curve.getRadius()
+    return ostream << curve.ToString()
         << ", start=" << curve.getStart()
         << ", end=" << curve.getEnd()
     << ")";
