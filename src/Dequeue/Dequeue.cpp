@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <Dequeue.h>
+#include "Dequeue.h"
 
 
 bool Deque::isFull()
@@ -67,7 +67,7 @@ void Deque::insertfront(int key)
     else if (front == 0)
         front = size - 1;
  
-    else // decrement front end by '1'
+    else
         front = front - 1;
  
     arr[front] = key;
