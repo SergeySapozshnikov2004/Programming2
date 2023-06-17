@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 100
  
 class Deque {
     int *arr;
