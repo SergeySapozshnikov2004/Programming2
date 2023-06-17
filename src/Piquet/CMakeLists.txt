@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(division C CXX)
+project(piquet C CXX)
 
 set(SOURCE_FILES
     Curve.cpp
