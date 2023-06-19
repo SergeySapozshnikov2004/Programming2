@@ -1,11 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,c++
-
-### C++ ###
-# Prerequisites
-*.d
-
 # Compiled Object files
+**/.DS_Store
 *.slo
 *.lo
 *.o
@@ -35,23 +29,27 @@
 *.out
 *.app
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+**/cmake-build-debug
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/install_manifest.txt
+**/CMakeFiles/
+**/CTestTestfile.cmake
+**/Makefile
+**/*.cbp
+**/CMakeScripts
+**/compile_commands.json
 
-# Local History for Visual Studio Code
-.history/
+include/divisible/*
 
-# Built Visual Studio Code Extensions
-*.vsix
 
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
+## Local 
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++
+.idea/*.xml
+
+build/**/*
+
+include/*
+lib/*
+bin/*
+test/test_runner
