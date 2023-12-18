@@ -9,7 +9,7 @@ class ArrayInsertZeros: public Exercise
 
 ArrayInsertZeros(two_dimension_arr matrix);
 
-size_t** task_2() override;
+int** task_2() override;
 
 
 };
