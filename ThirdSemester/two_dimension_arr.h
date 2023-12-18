@@ -7,7 +7,7 @@ class two_dimension_arr
     private:
     size_t num_rows;
     size_t num_columns;
-    size_t **my_matrix;
+    int **my_matrix;
 
     public:
 
@@ -49,5 +49,5 @@ two_dimension_arr operator=(two_dimension_arr &&other) noexcept;
 
 friend void swap(two_dimension_arr& lha, two_dimension_arr& rha);
 
-size_t *two_dimension_arr::operator[](int num_rows);
+int *two_dimension_arr::operator[](int num_rows);
 };
