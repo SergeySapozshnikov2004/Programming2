@@ -6,5 +6,5 @@ class Exercise
     
     virtual void task_1();
 
-    virtual size_t** task_2();
+    virtual int** task_2();
 };
