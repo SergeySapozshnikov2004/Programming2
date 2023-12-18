@@ -14,10 +14,10 @@ two_dimension_arr::two_dimension_arr(int num_rows, int num_columns)
     num_columns = static_cast<size_t>(num_columns);
     this->num_rows = num_rows;
     this->num_columns = num_columns;
-    my_matrix = new size_t*[num_rows];
+    my_matrix = new int*[num_rows];
     for (size_t i = 0; i < num_rows; i++)
     {
-        my_matrix[i] = one_dimension_arr(num_columns).get_my_arr();
+        my_matrix[i] = one_dimension_arr(num_columns).get_arr();
     }
 }
 
@@ -34,10 +34,10 @@ two_dimension_arr::two_dimension_arr(const two_dimension_arr &matrix)
 {
     this->num_rows = matrix.num_rows;
     this->num_columns = matrix.num_columns;
-    this->my_matrix = new size_t*[num_rows];   
+    this->my_matrix = new int*[num_rows];   
     for (size_t i = 0; i < num_rows; ++i)
     {
-        this->my_matrix[i] = one_dimension_arr(num_rows).my_arr;
+        this->my_matrix[i] = one_dimension_arr(num_rows).get_arr();
         for (int j = 0; j < num_columns; ++j)
         {
             this->my_matrix[i][j] = matrix.my_matrix[i][j];
@@ -68,36 +68,21 @@ two_dimension_arr two_dimension_arr::operator=(const two_dimension_arr &other)
     {
         return *this;
     }
-    num_rows = other.num_rows;
-    num_columns = other.num_columns;
-    my_matrix = other.my_matrix;
+    two_dimension_arr n_arr(other);
+    swap(*this, n_arr);
     return *this;
 }
 
 two_dimension_arr two_dimension_arr::operator=(two_dimension_arr &&other) noexcept
 {
-    if (*this == other)
+    if (this == &other)
     {
         return *this;
     }
-    for (size_t i = 0; i < num_rows; i++)
-        {
-        delete[] my_matrix[i];
-        }
-    delete[] my_matrix;
-
-    for (size_t i = 0; i < num_rows; i++)
-        {
-        std::exchange(*this->my_matrix[i], *other[i]);
-        }
-    if (*this != other)
-    {
-    std::exchange(this->num_columns, other.num_columns);// swap??
-    std::exchange(this->num_rows, other.num_rows);
+    std::swap(this->num_columns, other.num_columns);
+    std::swap(this->num_rows, other.num_rows);
     std::swap(this->my_matrix, other.my_matrix);
-}
-
-return *this;
+    return *this;
 }
 
 void swap(two_dimension_arr &lha, two_dimension_arr &rha)
@@ -106,10 +91,12 @@ void swap(two_dimension_arr &lha, two_dimension_arr &rha)
     {
         std::swap(lha.my_matrix[i], rha.my_matrix[i]);
     }
-    swap(*lha.my_matrix, *rha.my_matrix);
+    std::swap(lha.num_columns, rha.num_columns);
+    std::swap(lha.num_rows, rha.num_rows);
+    std::swap(lha.my_matrix, rha.my_matrix);
 }
 
-size_t *two_dimension_arr::operator[](int num_rows)
+int *two_dimension_arr::operator[](int num_rows)
 {
     return my_matrix[num_rows];
 }
