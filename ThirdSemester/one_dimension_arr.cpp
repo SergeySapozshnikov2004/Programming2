@@ -12,7 +12,7 @@ one_dimension_arr::one_dimension_arr(int num_el)
         throw std::logic_error("Размер должен быть положительным");
     }
     num_el = static_cast<size_t>(num_el);
-    my_arr = new size_t[num_el];
+    my_arr = new int[num_el];
 }
 
 
@@ -25,7 +25,7 @@ one_dimension_arr::~one_dimension_arr()
 one_dimension_arr::one_dimension_arr(const one_dimension_arr& arr): one_dimension_arr(arr.num_el)
 {
     this->num_el = arr.num_el;
-    this->my_arr = new size_t[num_el];   
+    this->my_arr = new int[num_el];   
     for (size_t i = 0; i < num_el; ++i)
     {
             this->my_arr[i] = arr.my_arr[num_el];
@@ -53,7 +53,6 @@ one_dimension_arr one_dimension_arr::operator=(one_dimension_arr &&other) noexce
     {
         return *this;
     }
-    delete[] my_arr;
     swap(*this, other);
     return *this;
 }
@@ -66,6 +65,11 @@ int one_dimension_arr::operator[](int index)
 size_t one_dimension_arr::get_num_el()
 {
     return num_el;
+}
+
+int *one_dimension_arr::get_arr()
+{
+    return my_arr;
 }
 
 void swap(one_dimension_arr& lha, one_dimension_arr& rha)
