@@ -6,7 +6,7 @@ class one_dimension_arr
 {
     private:
     size_t num_el;
-    size_t *my_arr;
+    int *my_arr;
 
     public:
     
@@ -61,5 +61,7 @@ int operator[](int index);
 friend void swap(one_dimension_arr& lha, one_dimension_arr& rha);
 
 size_t get_num_el();
+
+int* get_arr();
 
 };
