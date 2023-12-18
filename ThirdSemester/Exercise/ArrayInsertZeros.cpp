@@ -2,12 +2,12 @@
 
 ArrayInsertZeros::ArrayInsertZeros(two_dimension_arr matrix): my_matrix(matrix){}
 
-size_t **ArrayInsertZeros::task_2()
+int **ArrayInsertZeros::task_2()
 {
-    int num_rows = my_matrix.get_num_rows();
-    int num_columns = my_matrix.get_num_columns();
-    int new_num_rows = num_rows; 
-        for (int i = 0; i < num_rows; i++)
+    size_t num_rows = my_matrix.get_num_rows();
+    size_t num_columns = my_matrix.get_num_columns();
+    size_t new_num_rows = num_rows; 
+        for (size_t i = 0; i < num_rows; i++)
         {
             if(my_matrix[i][0] % 3 == 0)
             {
@@ -15,10 +15,10 @@ size_t **ArrayInsertZeros::task_2()
             }
         }
 
-    size_t** new_arr = new size_t*[new_num_rows];
-    for (int k = 0; k < new_num_rows; k++)
+    int** new_arr = new int*[new_num_rows];
+    for (size_t k = 0; k < new_num_rows; k++)
     {
-        new_arr[k] = new size_t[num_columns];
+        new_arr[k] = new int[num_columns];
     }
     
     size_t i_rem = 0; 
@@ -26,7 +26,7 @@ size_t **ArrayInsertZeros::task_2()
     {
         if (my_matrix[i][0] % 3 == 0)
             {
-                for(int k = 0; k < num_columns; k++)
+                for(size_t k = 0; k < num_columns; k++)
                 {
                     new_arr[i_rem][k] = 0;
                     new_arr[i_rem + 1][k] = new_arr[i][k];                    
