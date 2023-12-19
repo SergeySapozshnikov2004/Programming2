@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <stdexcept>
 #include<utility>
+#include <sstream>
+#include <iostream>
 
 two_dimension_arr::two_dimension_arr(int num_rows, int num_columns)
 {
@@ -101,5 +103,19 @@ int *two_dimension_arr::operator[](int num_rows)
     return my_matrix[num_rows];
 }
 
-
+std::ostream& operator<<(std::ostream &os, two_dimension_arr &my_matrix)
+{
+    size_t num_rows = my_matrix.get_num_rows();
+    size_t num_columns = my_matrix.get_num_columns();
+    std::stringstream result_string;
+    for (int i = 0; i < num_rows; i++)
+    {
+        for (int j = 0; j < num_columns; j++)
+        {
+            result_string << my_matrix[i][j] << " ";
+        }
+        result_string << "\n";
+    }
+    return os << result_string.str();
+}
 
