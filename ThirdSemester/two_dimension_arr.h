@@ -50,4 +50,7 @@ two_dimension_arr operator=(two_dimension_arr &&other) noexcept;
 friend void swap(two_dimension_arr& lha, two_dimension_arr& rha);
 
 int *two_dimension_arr::operator[](int num_rows);
+
+
+friend std::ostream& operator<<(std::ostream& os, two_dimension_arr& my_matrix);
 };
